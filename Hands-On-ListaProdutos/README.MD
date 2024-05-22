@@ -32,3 +32,7 @@ O script principal cria instâncias das classes `Pessoa` e `Funcionario`, armaze
 4. Execute o script com o comando:
    ```bash
    ruby lista_pessoas.rb
+
+## Visualização
+### Exemplo da funcionalidade
+![2024-05-22_15-16.png](2024-05-22_15-16.png)
