@@ -1,1 +1,1 @@
-Este repositório contém todos os materiais necessários para acompanhar o curso, incluindo exemplos de código, exercícios e projetos práticos. Aproveite ao máximo esses recursos para aprofundar seu aprendizado e desenvolver suas habilidades.
+Este repositório contém todos os materiais necessários para acompanhar o curso, incluindo exemplos de código, exercícios e projetos práticos. 
