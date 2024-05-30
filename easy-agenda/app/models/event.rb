@@ -1,4 +1,3 @@
-
 class Event < ApplicationRecord
   enum status: { active: "active", removed: "removed" }
 
@@ -15,10 +14,13 @@ class Event < ApplicationRecord
   scope :today, -> { where(started_at: Date.current.beginning_of_day..Date.current.end_of_day) }
   scope :in_period, ->(period_start, period_end) { where("started_at >= ? AND started_at <= ?", period_start, period_end) }
 
+  has_one_attached :file
+
   private
 
   def validate_if_finished_greater_than_started
-    return unless started_at && finished_at
+    return unless started_at
+    return unless finished_at
     return if finished_at > started_at
 
     errors.add(:finished_at, :invalid)
@@ -26,7 +28,7 @@ class Event < ApplicationRecord
 
   def validate_if_starts_in_future
     return unless started_at
-    return if started_at >= Time.now
+    return if started_at >= Time.current
 
     errors.add(:started_at, :invalid)
   end
