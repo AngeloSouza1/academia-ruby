@@ -15,6 +15,8 @@ class Event < ApplicationRecord
   scope :in_period, ->(period_start, period_end) { where("started_at >= ? AND started_at <= ?", period_start, period_end) }
 
   has_one_attached :file
+  has_rich_text :description
+
 
   private
 
