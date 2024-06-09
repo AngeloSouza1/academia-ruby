@@ -1,23 +1,24 @@
 <div class="card" id="<%= dom_id event %>">
   <div class="card-body">
     <p>
-      <strong>Name:</strong>
+      <strong>Nome:</strong>
       <%= event.name %>
     </p>
 
     <p>
-      <strong>Description:</strong>
+      <strong>Detalhes:</strong>
       <%= event.description %>
     </p>
 
     <p>
-      <strong>Started at:</strong>
-      <%= event.started_at %>
+      <strong>Início:</strong>
+      <%= l event.started_at %>
     </p>
 
     <p>
-      <strong>Finished at:</strong>
-      <%= event.finished_at %>
+      <strong>Fim:</strong>
+      <%#= l event.finished_at, format: :only_hour %>
+      <%= l event.finished_at %>
     </p>
 
     <% if event.file.attached? %>
