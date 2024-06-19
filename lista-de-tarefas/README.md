@@ -99,11 +99,15 @@ Contribuições são bem-vindas! Se você quiser contribuir para o projeto, siga
   git checkout -b minha-feature
   ```
 
+🔹 Faça commit das suas alterações: 
+  ```bash
+  git commit -m 'Adicionar nova feature'
+  ```
 
-🔹 Faça commit das suas alterações: git commit -m 'Adicionar nova feature'
-
-🔹 Faça push para a branch: git push origin minha-feature
-
+🔹 Faça push para a branch:
+  ```bash
+    git push origin minha-feature
+  ```
 🔹 Envie um pull request.
 
 ---
