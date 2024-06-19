@@ -40,6 +40,7 @@ Lista-de-Tarefas é desenvolvido utilizando as seguintes tecnologias:
 <br>
 🔹 Assista a este vídeo sobre a funcionalidade da aplicação.
 
+https://github.com/AngeloSouza1/academia-ruby/assets/104176076/f18e26f2-ed04-42fd-8830-5a0e59d248f2
 
 
 ---
