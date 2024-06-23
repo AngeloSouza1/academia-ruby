@@ -1,19 +1,91 @@
-<div class="card">
+<!--<div class="card">-->
+  <%#= simple_form_for @customer do |form| %>
+<!--   <div class="card-body">-->
+<!--     <div class="row">-->
+<!--        <div class="col-12 col-md-9">-->
+          <%#= form.input :name %>
+<!--        </div>-->
+<!--        <div class="col-12 col-md-3">-->
+          <%#= form.input :dob, html5: true %>
+<!--        </div>-->
+<!--      </div>-->
+          <%#= form.input :mobile_phone %>
+          <%#= form.input :email %>
+<!--    </div>-->
+<!--  <div class="card-footer d-flex justify-content-between ">-->
+    <%#= link_to "Voltar",  customers_path , class:"btn btn-secondary" %>
+    <%#= form.button :button, class: "btn-primary" %>
+<!--   </div>-->
+  <%# end %>
+
+
+<div class="card card-custom">
   <%= simple_form_for @customer do |form| %>
-   <div class="card-body">
-     <div class="row">
+    <div class="card-body">
+      <div class="row">
         <div class="col-12 col-md-9">
-          <%= form.input :name %>
+          <%= form.input :name, input_html: { class: 'form-control' } %>
         </div>
         <div class="col-12 col-md-3">
-          <%= form.input :dob, html5: true %>
+          <%= form.input :dob, html5: true, input_html: { class: 'form-control' } %>
         </div>
       </div>
-          <%= form.input :mobile_phone %>
-          <%= form.input :email %>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <%= form.input :mobile_phone, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="col-12 col-md-6">
+          <%= form.input :email, input_html: { class: 'form-control' } %>
+        </div>
+      </div>
     </div>
-  <div class="card-footer d-flex justify-content-between ">
-    <%= link_to "Voltar",  customers_path , class:"btn btn-secondary" %>
-    <%= form.button :button, class: "btn-primary" %>
-   </div>
+    <div class="card-footer d-flex justify-content-between">
+      <%= link_to "Voltar", customers_path, class: "btn btn-secondary" %>
+      <%= form.button :submit, class: "btn btn-primary" %>
+    </div>
   <% end %>
+</div>
+
+<style>
+    .card-custom {
+        border: 1px solid #c0c0c0; /* Escurece um pouco a borda */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+        transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave */
+        margin-bottom: 1rem; /* Espaçamento vertical entre os cards */
+    }
+
+    .card-custom:hover {
+        border-color: #808080; /* Mudança na borda ao passar o mouse */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+    }
+
+    .card-body {
+        padding: 1rem; /* Espaçamento interno dos cards */
+    }
+
+    .card-footer {
+        padding: 1rem; /* Espaçamento interno dos cards */
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #004080, #002060); /* Gradiente igual ao do header */
+        border: none;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #002060, #001040); /* Gradiente mais escuro ao passar o mouse */
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>

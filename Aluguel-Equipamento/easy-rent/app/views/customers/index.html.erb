@@ -127,6 +127,17 @@
           border-color: #808080; /* Mudança na borda ao passar o mouse */
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
       }
+      img {
+          border: 2px solid transparent;
+          border-radius: 10px;
+          box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+          transition: border 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      img:hover {
+          border: 2px solid #ffffff;
+          box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+      }
   </style>
 </head>
 <body>
@@ -134,7 +145,8 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Minha Empresa</a>
+    <img src="<%= asset_path('img1.png') %>" alt="Logo" style="height: 50px; border: 2px solid transparent; border-radius: 10px; box-shadow: 0 0 0 rgba(255, 255, 255, 0); transition: border 0.8s ease, box-shadow 0.8s ease;">
+    <h5 class="col-3 fw-bold mb-2 mb-md-0" style="font-size: 2.0rem;">Lista de Clientes</h5>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -161,9 +173,10 @@
 <header class="text-center">
   <div class="container">
     <div class="row align-items-center justify-content-between">
-      <div class="col-12 col-md-6">
-        <h1 class="fw-bold mb-3 mb-md-0" style="font-size: 4.5rem;">Lista de Clientes</h1>
+      <div class="col-3 col-md-6 text-start">
+
       </div>
+
       <div class="col-12 col-md-6 text-md-end">
         <%= link_to new_customer_path, class: "btn btn-custom" do %>
           <i class="fas fa-plus me-2"></i>
