@@ -16,28 +16,18 @@ class CustomersController < ApplicationController
   end
 
 
-  # def create
-  #   @customer = Customer.new(customer_params)
-  #   authorize @customer
-  #   if @customer.save
-  #     flash[:success] = "Dados do cliente salvos com sucesso!"
-  #     redirect_to @customer
-  #   else
-  #     render :new
-  #   end
-  # end
-
   def create
     @customer = Customer.new(customer_params)
     authorize @customer
-
     if @customer.save
-      flash[:success] = "Cliente salvo com sucesso."
-      redirect_to customers_path
+      flash[:success] = "Dados do cliente salvos com sucesso!"
+      redirect_to @customer
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
+
+
 
 
   def  edit
