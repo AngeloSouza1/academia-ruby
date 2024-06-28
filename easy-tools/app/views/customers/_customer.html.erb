@@ -5,8 +5,9 @@
           <spam> <%= customer.name %></spam>
        </div>
      </div>
-  <div class="card-footer">
-    <%= link_to "Editar", edit_customer_path(customer), class: "btn btn-info" %>
-  </div>
-
+  <% if policy(customer).update? %>
+    <div class="card-footer">
+      <%= link_to "Editar", edit_customer_path(customer), class: "btn btn-info" %>
+    </div>
+    <% end %>
 </div>

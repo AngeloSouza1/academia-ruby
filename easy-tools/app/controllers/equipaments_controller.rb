@@ -4,14 +4,17 @@ class EquipamentsController < ApplicationController
 
   def index
     @equipaments = Equipament.order(:name, :serial_number)
+    authorize @equipaments
   end
 
   def new
     @equipament = Equipament.new
+    authorize @equipament
   end
 
   def create
     @equipament = Equipament.new(equipament_params)
+    authorize @equipament
 
     if @equipament.save
       flash[:success] = "Equipamento cadastrado com sucesso!"

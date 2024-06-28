@@ -122,10 +122,10 @@
       <div class="form-section">
         <h2 class="mb-3">Dados do Equipamento</h2>
         <div class="row mb-3">
-          <div class="col-md-9">
+          <div class="col-md-8">
             <%= form.input :name, label: 'Nome', label_html: { class: 'form-label' }, input_html: { class: 'form-control' } %>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <%= form.input :serial_number, label: 'Número Serial', html5: true, input_html: { class: 'form-control' } %>
           </div>
         </div>
@@ -143,7 +143,7 @@
           <%= link_to "Voltar", equipaments_path, class: "btn btn-secondary w-100" %>
         </div>
         <div class="col-12 col-md-6">
-          <%= form.button :submit, "Salvar", class: "btn btn-primary w-100" %>
+          <%= form.button :submit, 'Salvar', class: 'btn btn-primary w-100', onclick: 'showMessage()' %>
         </div>
       </div>
     </div>
@@ -157,6 +157,12 @@
   <% end %>
 </div>
 
+<!-- JavaScript -->
+<script>
+    function showMessage() {
+        alert('Dados salvos com sucesso!');
+    }
+</script>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>

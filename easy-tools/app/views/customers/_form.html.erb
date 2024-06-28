@@ -137,7 +137,7 @@
           <%= link_to "Voltar", customers_path, class: "btn btn-secondary w-100" %>
         </div>
         <div class="col-12 col-md-6">
-          <%= form.button :submit, "Salvar", class: "btn btn-primary w-100" %>
+          <%= form.button :submit, 'Salvar', class: 'btn btn-primary w-100', onclick: 'showMessage()' %>
         </div>
       </div>
     </div>
@@ -150,10 +150,14 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   <% end %>
-
 </div>
 
-
+<!-- JavaScript -->
+<script>
+    function showMessage() {
+        alert('Dados salvos com sucesso!');
+    }
+</script>
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -170,15 +170,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
+
+    <% if policy(Customer).index? %>
         <li class="nav-item">
           <%= link_to "Clientes", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+    <% end %>
+    <% if policy(Equipament).index? %>
+       <li class="nav-item">
           <%= link_to "Equipamentos", equipaments_path, class: "nav-link" %>
         </li>
+    <% end %>
         <li class="nav-item">
           <a class="nav-link" href="#">Contato</a>
         </li>
@@ -188,9 +190,11 @@
 </nav>
 
 <header class="text-center">
-  <%= link_to new_customer_path, class: "btn btn-custom" do %>
-    <i class="fas fa-plus me-2"></i>
-    Novo Cliente
+  <% if policy(Customer).update? %>
+    <%= link_to new_customer_path, class: "btn btn-custom" do %>
+      <i class="fas fa-plus me-2"></i>
+      Novo Cliente
+    <% end %>
   <% end %>
 </header>
 
@@ -203,7 +207,9 @@
           <div class="card-body">
             <h5 class="card-title"><%= customer.name %></h5>
             <p class="card-text"><%= customer.email %></p>
+          <% if policy(Customer).update? %>
             <%= link_to 'Ver Detalhes', edit_customer_path(customer), class: 'btn btn-primary me-2' %>
+            <% end %>
           </div>
         </div>
       </div>
