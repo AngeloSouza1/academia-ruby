@@ -27,9 +27,6 @@ class CustomersController < ApplicationController
     end
   end
 
-
-
-
   def  edit
     authorize @customer
   end

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cliente</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+      body {
+          font-family: 'Roboto', sans-serif;
+          background-color: #f8f9fa; /* Cor de fundo do corpo */
+          margin-bottom: 0; /* Remove a margem inferior */
+      }
+
+      .header-custom {
+          background: linear-gradient(135deg, #004080, #002060); /* Gradiente azul escuro */
+          color: #fff; /* Texto branco */
+          padding: 1rem 0; /* Espaçamento interno */
+          text-align: left; /* Centralizar texto */
+          margin-bottom: 15px; /* Espaçamento do topo */
+      }
+
+      .header-custom h1 {
+          font-size: 1.5rem; /* Tamanho da fonte do título */
+          margin-bottom: 0; /* Remover margem inferior do título */
+      }
+
+      .card-custom {
+          border: 1px solid #c0c0c0; /* Borda do card */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do card */
+          transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+          max-width: 600px;
+          margin: 0 auto; /* Centralizar na tela */
+          margin-top: 11px; /* Espaçamento do topo */
+          margin-bottom: 20px; /* Espaçamento inferior */
+      }
+
+      .card-custom:hover {
+          border-color: #808080; /* Mudança na borda ao passar o mouse */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+      }
+
+      .card-body {
+          padding: 2rem; /* Espaçamento interno do corpo do card */
+      }
+
+      .form-label {
+          font-weight: bold;
+      }
+
+      .form-section {
+          background-color: #e9ecef; /* Cor de fundo da seção de formulário */
+          padding: 1rem; /* Espaçamento interno da seção */
+          margin-bottom: 1rem; /* Margem inferior da seção */
+          border-radius: 0.5rem; /* Borda arredondada */
+      }
+
+      .btn-primary {
+          background: linear-gradient(135deg, #004080, #002060); /* Gradiente do botão */
+          border: none;
+          border-radius: 0.25rem;
+          transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+          background: linear-gradient(135deg, #002060, #001040); /* Gradiente mais escuro ao passar o mouse */
+      }
+
+      .btn-secondary {
+          background-color: #6c757d; /* Cor de fundo do botão secundário */
+          border: none;
+          border-radius: 0.25rem;
+          transition: background-color 0.3s;
+      }
+
+      .btn-secondary:hover {
+          background-color: #5a6268; /* Cor mais escura ao passar o mouse */
+      }
+
+      .footer {
+          padding: 20px 0; /* Espaçamento interno do rodapé */
+          background-color: #002060; /* Cor de fundo do rodapé */
+          color: #fff; /* Texto branco */
+          text-align: center; /* Centralizar texto */
+          margin-top: 20px; /* Espaçamento do topo */
+      }
+  </style>
+</head>
+<body>
+
+<header class="header-custom">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="<%= asset_path('img1.png') %>" alt="Logo" style="height: 50px; border: 2px solid transparent; border-radius: 10px; box-shadow: 0 0 0 rgba(255, 255, 255, 0); transition: border 0.8s ease, box-shadow 0.8s ease;" class="me-3">
+      <h5 class="fw-bold">Equipamentos</h5>
+
+</header>
+
+
+
+<!-- Formulário -->
+<div class="card card-custom">
+  <%= simple_form_for @equipament do |form| %>
+    <div class="card-body">
+      <div class="form-section">
+        <h2 class="mb-3">Dados do Equipamento</h2>
+        <div class="mb-3">
+          <%= form.input :name, label: 'Nome', label_html: { class: 'custom-label' }, input_html: { class: 'form-control' } %>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <%= form.input :serial_number, label: 'Número Serial', html5: true, input_html: { class: 'form-control' } %>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end bg-light p-3">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-2 mb-md-0">
+          <%= link_to "Voltar", equipaments_path, class: "btn btn-secondary w-100" %>
+        </div>
+        <div class="col-12 col-md-6">
+          <%= form.button :submit, "Salvar", class: "btn btn-primary w-100" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+  <% if flash[:success] %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= flash[:success] %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
