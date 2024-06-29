@@ -15,9 +15,4 @@ class Order < ApplicationRecord
     )
     schedule.save!
   end
-
-
-
-
-
 end

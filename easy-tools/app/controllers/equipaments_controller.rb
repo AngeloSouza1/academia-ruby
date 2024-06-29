@@ -8,8 +8,16 @@ class EquipamentsController < ApplicationController
   end
 
   def search
+    period_start = params[:period_start]&.presence
+    period_end = params[:period_end]&.presence
 
-    @equipaments = Equipament.where("lower(name) ILIKE ?", "#{params[:q]}%".downcase)
+    if period_start
+      @equipaments = Equipament
+                       .availables(period_start, period_end)
+                       .where("lower(name) ILIKE ?", "%#{params[:q]}%".downcase)
+    else
+      @equipaments = Equipament.none
+    end
     render layout: false
   end
 

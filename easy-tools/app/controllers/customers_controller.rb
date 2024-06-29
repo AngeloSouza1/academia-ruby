@@ -9,7 +9,7 @@ class CustomersController < ApplicationController
   def search
     # @q = Customer.ransack(name_matches: params[:q])
     # @customers = @q.result(distinct: true)
-    @customers = Customer.where("lower(name) ILIKE ?", "#{params[:q]}%".downcase)
+    @customers = Customer.where("lower(name) ILIKE ?", "%#{params[:q]}%".downcase)
     render layout: false
   end
 
