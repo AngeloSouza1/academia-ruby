@@ -9,6 +9,8 @@ class CustomersController < ApplicationController
   def search
     @q = Customer.ransack(params[:q])
     @customers = @q.result(distinct: true)
+
+    render layout: false
   end
   def show
     authorize @customer

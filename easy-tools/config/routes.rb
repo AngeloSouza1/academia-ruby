@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :equipaments
 
-  resources: orders
+  resources :orders
 
   get "up" => "rails/health#show", as: :rails_health_check
 
