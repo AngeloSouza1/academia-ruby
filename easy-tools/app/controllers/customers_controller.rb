@@ -7,11 +7,13 @@ class CustomersController < ApplicationController
   end
 
   def search
-    @q = Customer.ransack(params[:q])
-    @customers = @q.result(distinct: true)
-
+    # @q = Customer.ransack(name_matches: params[:q])
+    # @customers = @q.result(distinct: true)
+    @customers = Customer.where("lower(name) ILIKE ?", "#{params[:q]}%".downcase)
     render layout: false
   end
+
+
   def show
     authorize @customer
   end

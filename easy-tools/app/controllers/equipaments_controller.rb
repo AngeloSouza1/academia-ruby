@@ -7,10 +7,20 @@ class EquipamentsController < ApplicationController
     authorize @equipaments
   end
 
+  def search
+
+    @equipaments = Equipament.where("lower(name) ILIKE ?", "#{params[:q]}%".downcase)
+    render layout: false
+  end
+
+
+
   def new
     @equipament = Equipament.new
     authorize @equipament
   end
+
+
 
   def create
     @equipament = Equipament.new(equipament_params)

@@ -119,29 +119,48 @@
     <%= simple_form_for @order do |form| %>
       <div class="card-body">
         <div class="form-section">
-          <h2 class="mb-3">Dados do Pedido</h2>
+          <h2 class="mb-3">Consulta Pedidos</h2>
 
-          <%= form.input :customer_id, label: "Cliente" do %>
+          <%= form.input :customer_id, label: "Cliente", required: true do %>
             <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_customers_path %>" role="combobox">
-              <input type="text" class="form-control" data-autocomplete-target="input"/>
+              <input type="text" class="form-control" data-autocomplete-target="input" value="<%= form.object.customer&.name %>" />
               <%= form.input_field :customer_id, as: :hidden, data: { autocomplete_target: "hidden"} %>
               <ul class="list-group" data-autocomplete-target="results"></ul>
-            </div>
+           </div>
           <% end %>
-        </div>
-      </div>
+
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <%= form.input :period_start, html5: true, label: "Data Inicial" %>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <%= form.input :period_end, html5: true, label: "Data Final" %>
+                </div>
+
+
+                          <%= form.input :equipament_id, label: "Equipamento", required: true do %>
+                              <div data-controller="autocomplete" data-autocomplete-url-value="<%= search_equipaments_path %>" role="combobox">
+                                <input type="text" class="form-control" data-autocomplete-target="input" value="<%= form.object.equipament&.name %>" />
+                                <%= form.input_field :equipament_id, as: :hidden, data: { autocomplete_target: "hidden"} %>
+                                <ul class="list-group" data-autocomplete-target="results"></ul>
+                              </div>
+                          <% end %>
+
+       </div>
 
       <!-- footer -->
       <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end bg-light p-3">
         <div class="row">
           <div class="col-12 col-md-6 mb-2 mb-md-0">
-            <%= link_to "Voltar", customers_path, class: "btn btn-secondary w-100" %>
+            <%= link_to "Voltar",customers_path, class: "btn btn-secondary w-100" %>
           </div>
           <div class="col-12 col-md-6">
             <%= form.button :submit, 'Salvar', class: 'btn btn-primary w-100' %>
           </div>
         </div>
       </div>
+
     <% end %>
   </div>
 
