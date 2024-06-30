@@ -1,0 +1,9 @@
+<!-- app/views/shared/_header.html.erb -->
+<header class="text-center">
+  <% if policy(Customer).update? %>
+    <%= link_to new_customer_path, class: "btn btn-custom" do %>
+      <i class="fas fa-plus me-2"></i>
+      Novo Cliente
+    <% end %>
+  <% end %>
+</header>

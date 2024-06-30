@@ -1,0 +1,9 @@
+<!-- app/views/shared/_header.html.erb -->
+<header class="text-center">
+  <% if policy(Equipament).update? %>
+    <%= link_to new_equipament_path, class: "btn btn-custom" do %>
+      <i class="fas fa-plus me-2"></i>
+      Novo Equipamento
+    <% end %>
+  <% end %>
+</header>
