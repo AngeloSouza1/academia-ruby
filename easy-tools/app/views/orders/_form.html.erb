@@ -140,7 +140,7 @@
           <div class="col-12">
             <%= form.input :equipament_id, label: "Equipamento", required: true do %>
               <div role="combobox">
-                <input type="text" class="form-control" data-order-equipament-target="input" value="<%= form.object.customer&.name %>" />
+                <input type="text" class="form-control" data-order-equipament-target="input" value="<%= form.object.equipament&.name %>" />
                 <%= form.input_field :equipament_id, as: :hidden, data: { order_equipament_target: "hidden" } %>
                 <ul class="list-group" data-order-equipament-target="results"></ul>
               </div>
@@ -152,14 +152,11 @@
       <!-- footer -->
       <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end bg-light p-3">
         <div class="row">
-          <div class="col-12 col-md-6 mb-2 mb-md-0">
-            <%= link_to "Voltar", customers_path, class: "btn btn-secondary w-100" %>
-          </div>
-          <div class="col-12 col-md-6">
-            <%= form.button :submit, 'Salvar', class: 'btn btn-primary w-100' %>
-          </div>
-        </div>
+          <div class="col-12  mb-2 mb-md-0">
+            <%= link_to "Voltar", orders_path, class: "btn btn-secondary w-100" %>
+
       </div>
+
     </div>
   <% end %>
 </div>
