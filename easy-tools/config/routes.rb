@@ -1,7 +1,5 @@
-
 Rails.application.routes.draw do
   devise_for :users
-
 
   resources :customers do
     collection do
@@ -9,20 +7,15 @@ Rails.application.routes.draw do
     end
   end
 
- resources :equipaments do
+  resources :equipaments do
     collection do
       get :search
     end
-end
+  end
 
   resources :orders
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-   root "customers#index"
-
-
-
-
+  root "customers#index"
 end

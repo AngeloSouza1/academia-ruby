@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin-bottom: 0;
+}
+
+.header-custom {
+    background: linear-gradient(135deg, rgba(2, 89, 173, 0.93), #002060);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.header-custom h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.card-custom {
+    border: 1px solid #c0c0c0;
+    background: linear-gradient(135deg, rgba(83, 148, 248, 0.87), #f4f5f8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 11px;
+    margin-bottom: 20px;
+}
+
+.card-custom:hover {
+    border-color: #808080;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-section {
+    background: linear-gradient(135deg, rgba(2, 89, 173, 0.93), #002060);
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #004080, #002060);
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #002060, #001040);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.footer {
+    padding: 20px 0;
+    background: linear-gradient(135deg, rgba(2, 89, 173, 0.93), #002060);
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilizando os botões do Trix */
+.trix-button {
+    color: white !important;
+    background: linear-gradient(135deg, #87CEFA, #4682B4) !important;
+    border-color: #87CEFA !important;
+}
