@@ -6,7 +6,11 @@
 
 <body>
 
+<!-- Navbar -->
 <%= render 'shared/orders/navbar' %>
+
+<!-- SessionOff -->
+<%= render 'shared/endsession' %>
 
 <!-- Header -->
 <%= render 'shared/orders/botaoinserir' %>
@@ -20,7 +24,9 @@
           <div class="card-body">
             <h5 class="card-title"><%= order.customer.name %></h5>
             <p class="card-text"><%= order.equipament.name %></p>
-            <%= link_to 'Ver Detalhes', edit_order_path(order), class: 'btn btn-primary me-2' %>
+               <% if policy(Order).update? %>
+                    <%= link_to 'Ver Detalhes', edit_order_path(order), class: 'btn btn-primary me-2' %>
+               <% end %>
           </div>
         </div>
       </div>

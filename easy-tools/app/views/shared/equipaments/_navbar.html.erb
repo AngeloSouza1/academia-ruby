@@ -15,14 +15,11 @@
             <%= link_to "Clientes", root_path, class: "nav-link" %>
           </li>
         <% end %>
-        <% if policy(Equipament).index? %>
-          <li class="nav-item">
-            <%= link_to "Equipamentos", equipaments_path, class: "nav-link" %>
-          </li>
-        <% end %>
+
         <li class="nav-item">
           <%= link_to "Pedidos", orders_path, class: "nav-link" %>
         </li>
+
       </ul>
     </div>
   </div>

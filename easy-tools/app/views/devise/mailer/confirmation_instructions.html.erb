@@ -1,5 +1,19 @@
-<p>Welcome <%= @email %>!</p>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow rounded">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Welcome <%= @resource.email %>!</h2>
 
-<p>You can confirm your account email through the link below:</p>
+          <p class="text-center">
+            You can confirm your account email through the link below:
+          </p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+          <div class="text-center mt-4">
+            <%= link_to 'Confirm My Account', confirmation_url(@resource, confirmation_token: @token), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

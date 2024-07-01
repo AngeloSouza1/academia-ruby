@@ -1,7 +1,9 @@
 <!-- app/views/shared/_botaoinserir.html.erb -->
 <header class="text-center">
-  <%= link_to new_order_path, class: "btn btn-custom" do %>
-    <i class="fas fa-plus me-2"></i>
-    Novo Pedido
+  <% if policy(Order).update? %>
+    <%= link_to new_order_path, class: "btn btn-custom" do %>
+      <i class="fas fa-plus me-2"></i>
+      Novo Pedido
+    <% end %>
   <% end %>
 </header>

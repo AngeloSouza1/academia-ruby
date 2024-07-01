@@ -5,7 +5,8 @@
 <link rel="stylesheet" href="<%= asset_path('styles.css') %>">
 
 <div class="header-session d-flex justify-content-end">
-  <%= button_to('Sair', destroy_user_session_path, method: :delete, class: "btn btn-primary custom-btn", data: { turbo_confirm: "Deseja Sair?", disable_with: 'Loading...' }) %>
+  <div class="ml-auto">
+    <%= button_to('Sair', destroy_user_session_path, method: :delete, class: "btn btn-primary custom-btn", data: { turbo_confirm: "Deseja Sair?", disable_with: 'Loading...' }) %>
+  </div>
 </div>
-
 
