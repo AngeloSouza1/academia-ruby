@@ -3,11 +3,11 @@
     <div class="col-md-8">
       <div class="card shadow rounded">
         <div class="card-body">
-          <h2 class="text-center mb-4">Hello <%= @resource.email %>!</h2>
+          <h2 class="text-center mb-4">Olá! <%= @resource.email %>!</h2>
 
-          <p>Your account has been locked due to an excessive number of unsuccessful sign-in attempts.</p>
+          <p>Sua conta foi bloqueada devido a um número excessivo de tentativas de login malsucedidas.</p>
 
-          <p>To unlock your account, click the link below:</p>
+          <p>Para desbloquear sua conta, clique no link abaixo:</p>
 
           <p class="text-center">
             <%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token), class: "btn btn-primary" %>

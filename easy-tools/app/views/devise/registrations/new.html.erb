@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <div class="card shadow rounded">
         <div class="card-body">
-          <h2 class="text-center mb-4">Sign up</h2>
+          <h2 class="text-center mb-4">Inscrever-se</h2>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
             <%= f.error_notification %>
@@ -15,15 +15,15 @@
                           input_html: { autocomplete: "email", class: 'form-control', placeholder: 'Email' } %>
               <%= f.input :password,
                           required: true,
-                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'Password' } %>
+                          hint: ("#{@minimum_password_length} mínimo de caracteres" if @minimum_password_length),
+                          input_html: { autocomplete: "Nova Senha", class: 'form-control', placeholder: 'Senha' } %>
               <%= f.input :password_confirmation,
                           required: true,
-                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'Confirm Password' } %>
+                          input_html: { autocomplete: "Nova Senha", class: 'form-control', placeholder: 'Confirme sua senha' } %>
             </div>
 
             <div class="text-center">
-              <%= f.button :submit, "Sign up", class: "btn btn-primary btn-lg btn-rounded" %>
+              <%= f.button :submit, "Inscrever-se", class: "btn btn-primary btn-lg btn-rounded" %>
             </div>
           <% end %>
 

@@ -16,29 +16,29 @@
               <% end %>
 
               <%= f.input :password,
-                          hint: "Leave it blank if you don't want to change it",
+                          hint: "Deixe em branco se não quiser alterá-lo",
                           required: false,
-                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'New Password' } %>
+                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'Nova Senha' } %>
               <%= f.input :password_confirmation,
                           required: false,
-                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'Confirm New Password' } %>
+                          input_html: { autocomplete: "new-password", class: 'form-control', placeholder: 'Confirme a nova senha' } %>
               <%= f.input :current_password,
-                          hint: "We need your current password to confirm your changes",
+                          hint: "Precisamos da sua senha atual para confirmar suas alterações",
                           required: true,
                           input_html: { autocomplete: "current-password", class: 'form-control', placeholder: 'Current Password' } %>
             </div>
 
             <div class="text-center">
-              <%= f.button :submit, "Update", class: "btn btn-primary btn-lg btn-rounded" %>
+              <%= f.button :submit, "Atualizar", class: "btn btn-primary btn-lg btn-rounded" %>
             </div>
           <% end %>
 
-          <h3 class="mt-4">Cancel my account</h3>
+          <h3 class="mt-4">Cancelar minha conta</h3>
           <div>
-            Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger btn-lg btn-rounded' %>
+            Unhappy? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza?", turbo_confirm: "Tem certeza?" }, method: :delete, class: 'btn btn-danger btn-lg btn-rounded' %>
           </div>
 
-          <%= link_to "Back", :back, class: 'btn btn-secondary btn-lg btn-rounded mt-3' %>
+          <%= link_to "Voltar", :back, class: 'btn btn-secondary btn-lg btn-rounded mt-3' %>
         </div>
       </div>
     </div>

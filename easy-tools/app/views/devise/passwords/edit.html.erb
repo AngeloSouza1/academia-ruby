@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <div class="card shadow rounded">
         <div class="card-body">
-          <h2 class="text-center mb-4">Forgot your password?</h2>
+          <h2 class="text-center mb-4">Esqueceu sua senha?</h2>
 
           <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
@@ -11,18 +11,18 @@
             <div class="field">
               <%= f.input :reset_password_token, as: :hidden %>
               <%= f.input :password,
-                          label: "New Password",
+                          label: "Nova Senha",
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "new-password" } %>
               <%= f.input :password_confirmation,
-                          label: "Confirm New Password",
+                          label: "Confirme a nova senha",
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
             </div>
 
             <div class="actions">
-              <%= f.button :submit, "Change My Password", class: "btn btn-primary" %>
+              <%= f.button :submit, "Mudar minha senha", class: "btn btn-primary" %>
             </div>
           <% end %>
 
